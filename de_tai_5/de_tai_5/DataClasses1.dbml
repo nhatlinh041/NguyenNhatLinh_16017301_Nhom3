@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Quan_ly_thu_vien" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-2UM47P3;Initial Catalog=Quan_ly_thu_vien;Integrated Security=True" SettingsObjectName="de_tai_5.Properties.Settings" SettingsPropertyName="Quan_ly_thu_vienConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CTPM" Member="CTPMs">
+    <Type Name="CTPM">
+      <Column Name="MAPHIEUMUON" Type="System.String" DbType="Char(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MASACH" Type="System.String" DbType="Char(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="SACH_CTPM" Member="SACH" ThisKey="MASACH" OtherKey="MASACH" Type="SACH" IsForeignKey="true" />
+      <Association Name="PHIEUMUON_CTPM" Member="PHIEUMUON" ThisKey="MAPHIEUMUON" OtherKey="MAPHIEUMUON" Type="PHIEUMUON" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DOCGIA" Member="DOCGIAs">
+    <Type Name="DOCGIA">
+      <Column Name="MADOCGIA" Type="System.String" DbType="Char(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HOTEN" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GIOITINH" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(70) NOT NULL" CanBeNull="false" />
+      <Association Name="DOCGIA_PHIEUMUON" Member="PHIEUMUONs" ThisKey="MADOCGIA" OtherKey="MADOCGIA" Type="PHIEUMUON" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PHIEUMUON" Member="PHIEUMUONs">
+    <Type Name="PHIEUMUON">
+      <Column Name="MAPHIEUMUON" Type="System.String" DbType="Char(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MADOCGIA" Type="System.String" DbType="Char(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NGAYMUON" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NGAYHENTRA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="PHIEUMUON_CTPM" Member="CTPMs" ThisKey="MAPHIEUMUON" OtherKey="MAPHIEUMUON" Type="CTPM" />
+      <Association Name="DOCGIA_PHIEUMUON" Member="DOCGIA" ThisKey="MADOCGIA" OtherKey="MADOCGIA" Type="DOCGIA" IsForeignKey="true" />
+      <Association Name="PHIEUTRA_PHIEUMUON" Member="PHIEUTRA" ThisKey="MAPHIEUMUON" OtherKey="MAPHIEUMUON" Type="PHIEUTRA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PHIEUTRA" Member="PHIEUTRAs">
+    <Type Name="PHIEUTRA">
+      <Column Name="MAPHIEUMUON" Type="System.String" DbType="Char(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NGAYTRA" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Association Name="PHIEUTRA_PHIEUMUON" Member="PHIEUMUONs" ThisKey="MAPHIEUMUON" OtherKey="MAPHIEUMUON" Type="PHIEUMUON" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SACH" Member="SACHes">
+    <Type Name="SACH">
+      <Column Name="MASACH" Type="System.String" DbType="Char(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENSACH" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LOAI" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+      <Column Name="TENTACGIA" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SOLUONG" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="SACH_CTPM" Member="CTPMs" ThisKey="MASACH" OtherKey="MASACH" Type="CTPM" />
+    </Type>
+  </Table>
+</Database>
