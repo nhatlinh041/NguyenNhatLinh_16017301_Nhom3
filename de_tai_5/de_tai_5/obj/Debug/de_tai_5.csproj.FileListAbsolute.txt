@@ -45,3 +45,6 @@ C:\Users\kiral\Downloads\NguyenNhatLinh_16017301_Nhom3\NguyenNhatLinh_16017301_N
 C:\Users\kiral\Downloads\NguyenNhatLinh_16017301_Nhom3\NguyenNhatLinh_16017301_Nhom3\de_tai_5\de_tai_5\obj\Debug\de_tai_5.lvDoc_gia.resources
 C:\Users\kiral\Downloads\NguyenNhatLinh_16017301_Nhom3\NguyenNhatLinh_16017301_Nhom3\de_tai_5\de_tai_5\obj\Debug\de_tai_5.Quan_ly_muon_tra.resources
 C:\Users\kiral\Downloads\NguyenNhatLinh_16017301_Nhom3\NguyenNhatLinh_16017301_Nhom3\de_tai_5\de_tai_5\obj\Debug\de_tai_5.csproj.GenerateResource.Cache
+C:\Users\kiral\Source\Repos\NguyenNhatLinh_16017301_Nhom3\de_tai_5\de_tai_5\bin\Debug\de_tai_5.exe.config
+C:\Users\kiral\Source\Repos\NguyenNhatLinh_16017301_Nhom3\de_tai_5\de_tai_5\obj\Debug\de_tai_5.exe
+C:\Users\kiral\Source\Repos\NguyenNhatLinh_16017301_Nhom3\de_tai_5\de_tai_5\obj\Debug\de_tai_5.pdb
